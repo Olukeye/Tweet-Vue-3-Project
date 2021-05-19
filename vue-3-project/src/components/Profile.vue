@@ -8,16 +8,21 @@
         <div class="user-profile__follower-count">
             <strong>followers: </strong>{{followers}}
         </div>
+           <form class="user-profile__create-tweet">
+        <label for="newTweet"><strong>Tweet</strong></label>
+        <textarea id="newTweet" rows="4"/>
+    </form>
     </div>
     <div class="user-profile__tweets-wrapper">
         <TweetItem
          v-for="tweet in user.tweets" 
          :key="tweet.id"
          :username="user.username"
-         :tweet="tweet" />    
+         :tweet="tweet" @favourite="toggleFavourite"/>    
      </div>
 </div>
 </template>
+
 <script>
 import TweetItem from "./TweetItem";
 
@@ -66,6 +71,9 @@ export default {
   methods: {
     followUser() {
       this.followers++;
+    },
+    toggleFavourite(id){
+      console.log(`Favourite Tweet #${id}`)
     }
   },
   mounted() {
@@ -99,8 +107,13 @@ export default {
     padding: 0 10px;
     font-weight: bold;
 }
-
 h1 {
     margin: 0;
+}
+.user-profile__create-tweet {
+    border-top: 1px solid #dfe3e8;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 </style>

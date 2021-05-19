@@ -1,5 +1,5 @@
 <template>
-  <div class="tweet-item">
+  <div class="tweet-item" @click="favItemTweet(tweet.id)">
       <div class="user-profile__tweet">
           <div class="tweet-item__user">
               @{{username}} 
@@ -22,6 +22,11 @@ export default {
         tweet: {
             type: Object,
             required: true
+        }
+    },
+    methods: {
+        favItemTweet(id){
+            this.$emit("favourite", id)
         }
     }
 };
