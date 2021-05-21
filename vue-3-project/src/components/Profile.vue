@@ -35,6 +35,7 @@
 
 <script>
 import TweetItem from "./TweetItem";
+import "./style.scss";
 
 export default {
   name: 'Profile',
@@ -115,30 +116,39 @@ export default {
  padding:50px 5%;
 }
 
-.user-profile__user-panel{
-    display: flex;
-    flex-direction: column;
-    margin-right: 50px;
-    padding: 20px;
-    background-color:white;
-    border-radius: 5px;
-    border: 1px solid #dfe3e8;
-}
-.user-profile__admin-badge {
-    background: rebeccapurple;
-    color:white;
-    border-radius: 5px;
-    margin-right: auto;
-    padding: 0 10px;
-    font-weight: bold;
-}
+
+  .user-profile__user-panel{
+      display: flex;
+      flex-direction: column;
+      margin-right: 50px;
+      padding: 20px;
+      background-color:white;
+      border-radius: 5px;
+      border: 1px solid #dfe3e8;
+
+  }
 h1 {
-    margin: 0;
+margin: 0;
 }
+  
+
+.user-profile__admin-badge {
+background: rebeccapurple;
+color:white;
+border-radius: 5px;
+margin-right: auto;
+padding: 0 10px;
+font-weight: bold;
+}
+
 .user-profile__create-tweet {
-    border-top: 1px solid #dfe3e8;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
+border-top: 1px solid #dfe3e8;
+padding-top: 20px;
+display: flex;
+flex-direction: column;
+}
+.user-profile__tweet-wrapper {
+display: grid;
+grid-gap: 10px;
 }
 </style>
