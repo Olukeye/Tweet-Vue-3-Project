@@ -35,7 +35,6 @@
 
 <script>
 import TweetItem from "./TweetItem";
-import "./style.scss";
 
 export default {
   name: 'Profile',

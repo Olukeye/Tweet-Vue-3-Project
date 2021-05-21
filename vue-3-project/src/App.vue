@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Profile from './components/Profile.vue'
+import Profile from './components/Profile'
 
 export default {
   name: 'App',

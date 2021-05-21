@@ -13,7 +13,7 @@
 
 <script>
 export default {
-    name: "TweetItem",
+    name: 'TweetItem',
     props: {
         username: {
             type: String,
