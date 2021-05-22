@@ -1,54 +1,47 @@
 <template>
-  <div class="tweet-item" @click="favItemTweet(tweet.id)">
-      <div class="user-profile__tweet">
-          <div class="tweet-item__user">
-              @{{username}} 
-          </div>
-          <div class="tweet-item__user">
-              {{tweet.content}}
-          </div>
+  <div class="tweet-item">
+    <div class="user-profile__tweet">
+      <div class="tweet-item__user">@{{ username }}</div>
+      <div class="tweet-item__content">
+        {{ tweet.content }}
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'TweetItem',
-    props: {
-        username: {
-            type: String,
-            required: true
-        },
-        tweet: {
-            type: Object,
-            required: true
-        }
+  name: "TweetItem",
+  props: {
+    username: {
+      type: String,
+      required: true,
     },
-    methods: {
-        favItemTweet(id){
-            this.$emit("favourite", id)
-        }
-    }
+    tweet: {
+      type: Object,
+      required: true,
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .tweet-item {
-     width: 50%;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid #dfe3e8;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    }
+  width: 50%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #dfe3e8;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
 
 .tweet-item:hover {
-    transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
 
 .tweet-item__user {
-    font-weight: bold;
+  font-weight: bold;
 }
 </style>

@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import Profile from './components/Profile'
+import Profile from "./components/Profile";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Profile
-  }
-}
+    Profile,
+  },
+};
 </script>
 
 <style>
@@ -22,7 +22,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
-  background-color:#f3f5fa;
+  background-color: #f3f5fa;
   min-height: 100vh;
 }
 </style>
