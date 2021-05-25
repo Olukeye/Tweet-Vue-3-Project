@@ -20,8 +20,8 @@ export default {
     tweet: {
       type: Object,
       required: true,
-    },
-  },
+    }
+  }
 };
 </script>
 

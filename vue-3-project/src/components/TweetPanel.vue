@@ -5,11 +5,11 @@
     :class="{ '--exceeded': state.newTweetCharacterCount > 180 }"
   >
     <label for="newTweet"
-      ><strong>New Tweet: </strong>({{
+      ><strong>New Tweet</strong>({{
         state.newTweetCharacterCount
       }}/180)</label
     >
-    <textarea id="newTweet" rows="4" v-model="state.newTweetContent"></textarea>
+    <textarea id="newTweet" rows="4" v-model="state.newTweetContent"/>
 
     <div class="create-tweet-panel__submit">
       <div class="create-tweet-type">
@@ -31,23 +31,25 @@
 
 <script>
 import { reactive, computed } from "vue";
+
+
 export default {
   name: "TweetPanel",
-  setup(props, ctx) {
+  setup(props, context) {
     const state = reactive({
       newTweetContent: "",
       selectedTweetType: "instant",
       tweetTypes: [
         { value: "draft", name: "Draft" },
-        { value: "instant", name: "Instant Tweet" },
-      ],
-    });
+        { value: "instant", name: "Instant Tweet" }
+      ]
+    })
 
-    const newTweetCharacterCount = computed(() => state.newTweetContent.length);
+    const newTweetCharacterCount = computed(() => state.newTweetContent.length)
 
-    function createNewTweet() {
-      if (state.newTweetContent && state.selectedTweetType !== "draft") {
-        ctx.emit("add-tweet", state.newTweetContent);
+    function createNewTweet(){
+      if(state.newTweetContent && state.selectedTweetType !== "draft") {
+        context.emit("addTweet", state.newTweetContent);
         state.newTweetContent = "";
       }
     }
@@ -55,9 +57,9 @@ export default {
     return {
       state,
       newTweetCharacterCount,
-      createNewTweet,
-    };
-  },
+      createNewTweet
+    }
+  }
 };
 </script>
 

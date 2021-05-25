@@ -9,7 +9,7 @@
       <div class="user-profile__follower-count">
         <strong>Followers: </strong> {{ state.followers }}
       </div>
-      <TweetPanel @add-tweet="state.addTweet" />
+      <TweetPanel @addTweet="addTweet"/>
     </div>
     <div class="user-profile__tweets-wrapper">
       <TweetItem
@@ -29,7 +29,7 @@ import TweetPanel from "./TweetPanel";
 
 export default {
   name: "Profile",
-  components: { TweetItem, TweetPanel },
+  components: { TweetPanel , TweetItem},
   setup() {
     const state = reactive({
       followers: 0,
@@ -43,28 +43,27 @@ export default {
         tweets: [
           {
             id: 1,
-            content: " Am enjoying the tutorials",
+            content: " Am enjoying the tutorials"
           },
           {
             id: 2,
-            content: " you gonna love this show ",
-          },
-        ],
-      },
-    });
+            content: " you gonna love this show "
+          }
+        ]
+      }
+    })
 
     function addTweet(tweet) {
       state.user.tweets.unshift({
         id: state.user.tweets.length + 1,
-        content: tweet,
-      });
+        content: tweet
+      }); 
     }
-
     return {
       state,
-      addTweet,
-    };
-  },
+      addTweet
+    }
+  }
 };
 </script>
 
